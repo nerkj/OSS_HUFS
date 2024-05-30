@@ -42,35 +42,32 @@ fi
 
 if (($year % 4 == 0)) && (($year % 100 != 0)) || (($year % 400 == 0))
 then
-    if(( $mon == 2 )) && [ $day -gt 29 ]))
+    if(( $mon == 2 )) && [ $day -gt 29 ]
     then
         echo "존재하지 않는 일입니다. "+ "$1 $day $year 유효하지 않습니다." 
         exit 5
+    fi
 else
-    if(( $mon == 2 )) && [ $day -gt 28 ]))
+    if(( $mon == 2 )) && [ $day -gt 28 ]
     then
         echo "존재하지 않은 일입니다."+ "$1 $day $year 유효하지 않습니다."
         exit 6
+    fi
 fi
 
-case $mon_lower in
-    1) echo "January $day, $year" ;;
-    2) echo "Feb $day, $year" ;;
-    3) echo "Mar $day, $year" ;;
-    4) echo "Apr $day, $year" ;;
-    5) echo "May $day, $year" ;;
-    6) echo "Jun $day, $year" ;;
-    7) echo "Jul $day, $year" ;;
-    8) echo "Aug $day, $year" ;;
-    9) echo "Sep $day, $year" ;;
-    10) echo "Oct $day, $year" ;;
-    11) echo "Nov $day, $year" ;;
-    12) echo "Dec $day, $year" ;;
+case $mon in
+    1) mon="January";;
+    2) mon="Febuary";;
+    3) mon="March";;
+    4) mon="April";;
+    5) mon="May";;
+    6) mon="June";;
+    7) mon="July";;
+    8) mon="August";;
+    9) mon="September";;
+    10) mon="October";;
+    11) mon="November";;
+    12) mon="December";;
 esac
 
-    
-
-
-
-
-
+echo "$mon $day $year"
