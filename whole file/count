@@ -1,0 +1,28 @@
+#!/bin/bash
+mon=$1
+if [ $# = 0 ]
+then
+  echo "인수부족"
+  exit 1
+elif [ $# -ge 2 ]
+then
+	echo "인수많음"
+	exit 2
+fi
+
+case $mon
+in
+1) echo jan;;
+2) echo feb;;
+3) echo mar;;
+4) echo april;;
+5) echo may;;
+6) echo june;;
+7) echo july;;
+8) echo agust;;
+9) echo sep;;
+10) echo octo;;
+11) echo nov;;
+12) echo dec;;
+esac
+

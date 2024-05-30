@@ -1,0 +1,14 @@
+#!/bin/bash
+
+x=$1
+name=$2
+file=$3
+
+if [ $x -gt 0 -a $x -lt 10 ]
+then
+  echo 정답
+fi
+
+if [ -n $name -o  -a $file ] 
+then
+  echo 가능

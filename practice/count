@@ -1,0 +1,9 @@
+dir="$1"
+#echo "$dir" #count
+#echo $dir #전부 다
+
+ndir=$(ls -l "$dir" | cut -f1 | grep "d"|wc -l)
+nfile=$(ls -l "$dir" | cut -f1 | grep -v "d"| wc -l)
+
+echo "현재 위치 $dir"
+echo "파일 $ndir, 폴더 $nfile 개 입니다."

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+time=$1
+if [ $time -gt 0 ] && [ $time -lt 9 ]
+then
+  echo 굿모닝
+elif [ $time -lt 17 ]
+then
+  echo 굿애프터눈
+elif [ $time -lt 24 ]
+then
+  echo 굿이브닝
+else
+  echo "시간을 잘못입력했습니다."
+fi

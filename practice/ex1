@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo this is the bash # 주석
+echo $1 $2
+echo "$#" # echo '$#' (다막아서 x)
+
+name="$1"
+echo $name

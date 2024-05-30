@@ -1,0 +1,5 @@
+znew
+zmore
+zless
+zipdetails
+zgrep
