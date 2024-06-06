@@ -1,0 +1,42 @@
+#!/bin/bash
+
+name=$1
+phoneNum=$2
+
+if [ $# -gt 2 ]
+then
+	echo "입력인수 잘못됨."
+	exit 0
+fi
+
+if [[  ! $phoneNum =~ ^[0-9]{2,3}-[0-9]{4}-[0-9]{4}$ ]]
+then
+	echo "번호를 잘못입력함."
+	exit 1
+fi
+
+region=$(echo $phoneNum | cut -d'-' -f1)
+
+case $region in
+ 02) region="서울" ;;
+ 031) region="경기" ;;
+ 051) region="부산" ;;
+ 053) region="대구" ;;
+ 032) region="인천" ;;
+ *) region=""
+ esac
+ 
+search=$(grep -r $name PhoneBook| cut -d" " -f1)
+
+if [ -z $search  ]
+then
+	echo "$name $phoneNum $region" >> PhoneBook
+	sort -o PhoneBook PhoneBook
+else
+	grep -r $name PhoneBook
+	echo "여기 존재합니다."
+fi
+
+ 
+
+

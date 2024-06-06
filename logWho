@@ -1,0 +1,21 @@
+#!/bin/bash
+
+name=$1
+user=$(who)
+
+if [ $# -ne 1 ]
+then
+	echo "인수 잘못입력함."
+	exit 0
+fi
+
+while true
+do
+	if [ "$name" = "$user" ]
+	then
+	echo "$user 로그인함!"
+	break 1
+	fi
+	
+	sleep 1m
+done
